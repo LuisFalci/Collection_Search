@@ -9,7 +9,7 @@ function search(path) {
   return files.map((elem) => {
     let stats = fs.statSync(path + "/" + elem);
     if (stats.isFile()) {
-      if(elem.includes(".db") != true || !elem.includes(".txt")  != true|| !elem.includes(".doc")  != true){
+      if(elem.includes(".db") != true || elem.includes(".txt")  != true|| elem.includes(".doc")  != true){
       obj.push({ filepath: path+"/"+elem, name: elem });
     }
     return elem;
