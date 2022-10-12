@@ -8,8 +8,9 @@ function search(path) {
   let files = fs.readdirSync(path);
   return files.map((elem) => {
     let stats = fs.statSync(path + "/" + elem);
+    let upperCaseElem = elem.toUpperCase();
     if (stats.isFile()) {
-      if(elem.includes(".db") != true || elem.includes(".txt")  != true|| elem.includes(".doc")  != true){
+      if((!upperCaseElem.includes(".DB")) && (!upperCaseElem.includes(".TXT")) && (!upperCaseElem.includes(".DOC"))){
       obj.push({ filepath: path+"/"+elem, name: elem });
     }
     return elem;
